@@ -1,0 +1,20 @@
+{
+  "name": "standup",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cpsoinos/standup",
+  "authors": [
+    "Corey Psoinos <coreypsoinos@gmail.com>"
+  ],
+  "description": "Daily standup email generator",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
