@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021031239) do
+ActiveRecord::Schema.define(version: 20151021112432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,13 +28,18 @@ ActiveRecord::Schema.define(version: 20151021031239) do
     t.string "photo"
   end
 
-  create_table "standup_notes", force: :cascade do |t|
+  create_table "updates", force: :cascade do |t|
+    t.string   "category"
+    t.integer  "contact_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "created_by_id"
-    t.text     "personal_updates"
-    t.text     "work_updates"
+    t.integer  "user_id"
+    t.string   "photo"
   end
+
+  add_index "updates", ["contact_id"], name: "index_updates_on_contact_id", using: :btree
+  add_index "updates", ["user_id"], name: "index_updates_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -61,4 +66,6 @@ ActiveRecord::Schema.define(version: 20151021031239) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "updates", "contacts"
+  add_foreign_key "updates", "users"
 end
