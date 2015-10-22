@@ -17,7 +17,7 @@ $(document).ready(function() {
   var personalCount = 0
   var professionalCount = 0
 
-  $("#add-personal").click(function() {
+  $("#add-personal").click(function(ev) {
     var fields = $("#personal-form-fields").clone()
 
     fields.removeAttr("id")
@@ -28,7 +28,7 @@ $(document).ready(function() {
     slickifyDropdown(fields.find($(".dd-container")))
   })
 
-  $("#add-professional").click(function() {
+  $("#add-professional").click(function(ev) {
     var fields = $("#professional-form-fields").clone()
 
     fields.removeAttr("id")

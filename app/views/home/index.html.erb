@@ -11,33 +11,35 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div class="panel panel-primary update-panel personal-updates">
-          <div class="panel-heading">
-            <h3 class="panel-title">Personal Updates</h3>
-          </div>
-          <%= render "updates/personal_form" %>
-          <div class="text-center">
-            <button class="btn btn-fab btn-raised btn-primary add-new" id="add-personal"><i class="material-icons">add</i></button>
+    <%= form_for @update do |f| %>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="panel panel-primary update-panel personal-updates">
+            <div class="panel-heading">
+              <h3 class="panel-title">Personal Updates</h3>
+            </div>
+            <%= render "updates/personal_form", f: f %>
+            <div class="text-center">
+              <a class="btn btn-fab btn-raised btn-primary add-new" id="add-personal"><i class="material-icons">add</i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div class="panel panel-primary update-panel professional-updates">
-          <div class="panel-heading">
-            <h3 class="panel-title">Professional Updates</h3>
-          </div>
-          <%= render "updates/professional_form" %>
-          <div class="text-center">
-            <button class="btn btn-fab btn-raised btn-primary add-new" id="add-professional"><i class="material-icons">add</i></button>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="panel panel-primary update-panel professional-updates">
+            <div class="panel-heading">
+              <h3 class="panel-title">Professional Updates</h3>
+            </div>
+            <%= render "updates/professional_form", f: f %>
+            <div class="text-center">
+              <a class="btn btn-fab btn-raised btn-primary add-new" id="add-professional"><i class="material-icons">add</i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
 
   </div>
 <% end %>

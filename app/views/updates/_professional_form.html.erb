@@ -1,21 +1,19 @@
 <div class="panel-body">
   <div class="form">
-    <%= form_for @update do |f| %>
-      <div class="professional-form">
-        <div id="professional-form-fields">
-          <div class="col-xs-12 col-md-5">
-            <div class="pull-right">
-              <div class="contacts-dropdown"></div>
-            </div>
+    <div class="professional-form">
+      <div id="professional-form-fields">
+        <div class="col-xs-12 col-md-5">
+          <div class="pull-right">
+            <div class="contacts-dropdown"></div>
           </div>
-          <div class="col-xs-12 col-md-7">
-            <div class="field">
-              <%= f.text_area :content, multiple: true, placeholder: "Something professional...", rows: 4, class: "update-field" %>
-              <%= f.hidden_field :category, multiple: true, value: "professional" %>
-            </div>
+        </div>
+        <div class="col-xs-12 col-md-7">
+          <div class="field">
+            <%= f.text_area :content, multiple: true, placeholder: "Something professional...", rows: 4, class: "update-field" %>
+            <%= f.hidden_field :category, multiple: true, value: "professional" %>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
