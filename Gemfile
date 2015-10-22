@@ -22,6 +22,9 @@ gem 'rest-client'
 gem 'nokogiri'
 gem 'carrierwave'
 gem 'bower-rails', '~> 0.10.0'
+gem 'remotipart'
+gem 'gon'
+gem 'fullcontact'
 
 group :development, :test do
   gem 'byebug'

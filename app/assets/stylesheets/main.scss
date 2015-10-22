@@ -7,3 +7,39 @@ body .well, body .jumbotron, .container .well, .container .jumbotron, .container
 .title {
   font-family: 'Crete Round', serif;
 }
+
+.update-field {
+  width: 100%;
+}
+
+.panel-primary {
+  border: none;
+  background-color: #EEEEEE;
+
+  .panel-heading {
+    background-color: #17BCC9;
+  }
+}
+
+.update-panel {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.update-field {
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#undefined > div {
+  text-align: center;
+  border: none;
+
+  a {
+    color: black;
+  }
+}
+
+.add-new {
+  margin-bottom: 1em;
+  background-color: #17BCC9;
+}

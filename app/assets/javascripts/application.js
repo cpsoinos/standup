@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
+//= require jquery-readyselector
+//= require jquery-ddslick
 //= require bootstrap-sprockets
 //= require bootstrap-material-design/scripts/material
+//= require bootstrap-material-design/scripts/ripples
 //= require turbolinks
 //= require_tree .
