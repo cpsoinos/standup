@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021112432) do
+ActiveRecord::Schema.define(version: 20151022213026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20151021112432) do
     t.string "phone"
     t.string "photo"
   end
+
+  create_table "email_records", force: :cascade do |t|
+    t.string   "remote_id"
+    t.string   "to_email"
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "email_records", ["user_id"], name: "index_email_records_on_user_id", using: :btree
 
   create_table "updates", force: :cascade do |t|
     t.string   "category"
@@ -66,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151021112432) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "email_records", "users"
   add_foreign_key "updates", "contacts"
   add_foreign_key "updates", "users"
 end

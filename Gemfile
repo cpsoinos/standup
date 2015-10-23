@@ -24,7 +24,11 @@ gem 'carrierwave'
 gem 'bower-rails', '~> 0.10.0'
 gem 'remotipart'
 gem 'gon'
-gem 'fullcontact'
+# gem 'fullcontact'
+gem 'sidekiq'
+gem 'mandrill-api'
+gem 'sinatra', require: false
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'

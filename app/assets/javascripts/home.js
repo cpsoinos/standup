@@ -8,7 +8,11 @@ $(document).ready(function() {
       data: JSON.parse(gon.contacts),
       imagePosition: "left",
       width: 300,
-      selectText: "Whose update is this?"
+      selectText: "Whose update is this?",
+      onSelected: function(e) {
+        hidden_field = $(e.selectedItem).parents(".dd-container").next();
+        hidden_field.val(e.selectedData.value);
+      }
     });
   }
 
@@ -48,11 +52,11 @@ $(document).ready(function() {
           case 'file':
           case 'select-one':
           case 'select-multiple':
-              jQuery(this).val('');
-              break;
+            jQuery(this).val('');
+            break;
           case 'checkbox':
           case 'radio':
-              this.checked = false;
+            this.checked = false;
       }
     });
   }

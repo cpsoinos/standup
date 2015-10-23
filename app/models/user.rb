@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          omniauth_providers: [:google_oauth2]
 
   has_many :updates
+  has_many :email_records
 
   def self.from_omniauth(access_token)
     data = access_token.info
