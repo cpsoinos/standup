@@ -1,8 +1,14 @@
 class UpdatesController < ApplicationController
 
   def create
-    MailerJob.perform_later(collect_updates)
-    redirect_to root_path
+    StandupMailer.send_standup_email(collect_updates, current_user).perform_now
+    # if JSON.parse(response).status != "error"
+      flash[:notice] = "Success!"
+      redirect_to root_path
+    # else
+    #   flash[:alert] = "FAILURE!"
+    #   redirect_to :back
+    # end
   end
 
   protected
@@ -20,7 +26,7 @@ class UpdatesController < ApplicationController
       updates << Update.new(
         category: update_params[:category][update_count],
         contact_id: update_params[:contact_id][update_count],
-        content: update_params[:contact_id][update_count]
+        content: update_params[:content][update_count]
       )
       update_count += 1
     end
@@ -28,11 +34,12 @@ class UpdatesController < ApplicationController
   end
 
   def collect_updates
-    ids = []
+    ids ||= []
     parse_update_params.each do |update|
       update.save!
       ids << update.id
     end
+    ids
   end
 
 end

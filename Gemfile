@@ -27,6 +27,8 @@ gem 'gon'
 # gem 'fullcontact'
 gem 'sidekiq'
 gem 'mandrill-api'
+gem 'sinatra', require: false
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
