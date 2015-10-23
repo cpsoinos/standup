@@ -4,7 +4,7 @@ class StandupMailer < BaseMandrillMailer
   def send_standup_email(updates, user)
     options = {
       subject: "Standup for #{DateTime.now.strftime('%A, %B %e, %Y')}",
-      email: "coreypsoinos@gmail.com",
+      email: "team@promoboxx.com",
       name: "Promoboxx Team",
       template: "standup_2",
       updates: updates,
@@ -38,7 +38,10 @@ class StandupMailer < BaseMandrillMailer
           type: "to" }
       ],
       from_email: opts[:user].email,
-      from_name: opts[:user].name
+      from_name: opts[:user].name,
+      headers: {
+        "Reply-To" => "team@promoboxx.com"
+      }
     }
 
     response = send_mail(template_name, template_content, message).first
