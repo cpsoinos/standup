@@ -2,13 +2,8 @@ class UpdatesController < ApplicationController
 
   def create
     StandupMailer.send_standup_email(collect_updates, current_user).perform_now
-    # if JSON.parse(response).status != "error"
-      flash[:notice] = "Success!"
-      redirect_to root_path
-    # else
-    #   flash[:alert] = "FAILURE!"
-    #   redirect_to :back
-    # end
+    flash[:notice] = "The team should be receiving your standup notes shortly."
+    redirect_to root_path
   end
 
   protected

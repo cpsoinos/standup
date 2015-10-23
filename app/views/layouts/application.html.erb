@@ -10,8 +10,19 @@
 </head>
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+      <div class="alert alert-dismissable alert-success text-center">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Nice!</strong> <%= notice %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-dismissable alert-danger text-center">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Oh snap!</strong> <%= alert %>
+      </div>
+    <% end %>
+
     <%= yield %>
 
   </body>
