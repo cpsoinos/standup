@@ -56,6 +56,9 @@ def get(token)
       phone: phone,
       remote_photo_url: image_url
     })
+    # unless contact.save
+      # binding.pry
+    # end
     contact.save
     puts "#{contact.name} - #{contact.email}"
   end
@@ -72,11 +75,12 @@ require 'google/api_client/auth/storage'
 require 'google/api_client/auth/storages/file_store'
 require 'fileutils'
 require 'certified'
+require 'pry'
 
-APPLICATION_NAME = 'Directory API Ruby Quickstart'
-# CLIENT_SECRETS_PATH = 'client_secret.json'
+APPLICATION_NAME = 'Standup'
+CLIENT_SECRETS_PATH = "https://s3.amazonaws.com/standup-app/client_secret.json"
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
-                             "admin-directory_v1-ruby-quickstart.json")
+                             "standup.json")
 SCOPE = 'https://www.googleapis.com/auth/admin.directory.user.readonly'
 
 ##
