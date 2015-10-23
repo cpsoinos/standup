@@ -42,3 +42,7 @@ group :development, :test do
   gem 'faker'
   gem 'better_errors'
 end
+
+group :development, :production do
+  gem 'rails_12factor'
+end
