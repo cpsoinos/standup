@@ -469,6 +469,7 @@ DEPENDENCIES
   google-api-client
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   mandrill-api
   nokogiri
   omniauth

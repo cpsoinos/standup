@@ -72,6 +72,7 @@ require 'google/api_client/auth/storage'
 require 'google/api_client/auth/storages/file_store'
 require 'fileutils'
 require 'certified'
+require 'launchy'
 
 APPLICATION_NAME = 'Standup'
 CLIENT_SECRETS_PATH = "https://s3.amazonaws.com/standup-app/client_secret.json"

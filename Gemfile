@@ -30,6 +30,7 @@ gem 'mandrill-api'
 gem 'sinatra', require: false
 gem 'fog'
 gem 'puma'
+gem 'launchy'
 
 group :development, :test do
   gem 'byebug'
