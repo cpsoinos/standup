@@ -29,6 +29,7 @@ gem 'sidekiq'
 gem 'mandrill-api'
 gem 'sinatra', require: false
 gem 'fog'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'

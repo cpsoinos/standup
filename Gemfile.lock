@@ -338,6 +338,7 @@ GEM
       coolline (~> 0.5)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (2.13.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -471,6 +472,7 @@ DEPENDENCIES
   pg
   pry-coolline
   pry-rails
+  puma
   rails (= 4.2.3)
   remotipart
   rest-client
