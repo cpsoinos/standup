@@ -78,7 +78,7 @@ require 'certified'
 require 'pry'
 
 APPLICATION_NAME = 'Directory API Ruby Quickstart'
-CLIENT_SECRETS_PATH = 'client_secret.json'
+# CLIENT_SECRETS_PATH = 'client_secret.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
                              "admin-directory_v1-ruby-quickstart.json")
 SCOPE = 'https://www.googleapis.com/auth/admin.directory.user.readonly'
@@ -98,10 +98,10 @@ def authorize
   auth = storage.authorize
 
   if auth.nil? || (auth.expired? && auth.refresh_token.nil?)
-    app_info = Google::APIClient::ClientSecrets.load(CLIENT_SECRETS_PATH)
+    # app_info = Google::APIClient::ClientSecrets.load(CLIENT_SECRETS_PATH)
     flow = Google::APIClient::InstalledAppFlow.new({
-      :client_id => app_info.client_id,
-      :client_secret => app_info.client_secret,
+      :client_id => ENV["GOOGLE_CLIENT_ID"],
+      :client_secret => ENV["GOOGLE_CLIENT_SECRET"],
       :scope => SCOPE})
     auth = flow.authorize(storage)
     # puts "Credentials saved to #{CREDENTIALS_PATH}" unless auth.nil?
@@ -133,4 +133,15 @@ domain_results.each do |result|
   contact.last_name = result.name.familyName
   contact.save!
   puts "#{contact.name} updated"
+end
+
+
+
+
+# Remove all non-promoboxx contacts
+
+Contact.all.each do |c|
+  if c.email.split("@").last != "promoboxx.com"
+    c.destroy
+  end
 end
