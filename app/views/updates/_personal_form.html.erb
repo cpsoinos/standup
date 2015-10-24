@@ -12,6 +12,11 @@
           <div class="field">
             <%= f.text_area :content, multiple: true, placeholder: "Something personal...", rows: 4, class: "update-field" %>
             <%= f.hidden_field :category, multiple: true, value: "personal" %>
+            <%= f.label :photo, multiple: true, value: "Have a picture?" %>
+            <%= f.file_field :photo, multiple: true %>
+            or
+            <%= f.label :remote_photo_url, multiple: true, value: "picture url:" %>
+            <%= f.text_field :remote_photo_url, multiple: true, placeholder: "http://..." %>
           </div>
         </div>
       </div>

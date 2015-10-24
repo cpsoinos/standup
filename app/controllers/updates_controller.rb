@@ -21,7 +21,9 @@ class UpdatesController < ApplicationController
       updates << Update.new(
         category: update_params[:category][update_count],
         contact_id: update_params[:contact_id][update_count],
-        content: update_params[:content][update_count]
+        content: update_params[:content][update_count],
+        photo: (update_params[:photo] && update_params[:photo][update_count]) ? update_params[:photo][update_count] : nil,
+        remote_photo_url: (update_params[:remote_photo_url] && update_params[:remote_photo_url][update_count]) ? update_params[:remote_photo_url][update_count] : nil
       )
       update_count += 1
     end
