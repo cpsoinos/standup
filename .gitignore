@@ -13,3 +13,4 @@
 /tmp
 /.env
 /db/client_secret.json
+/public/uploads
