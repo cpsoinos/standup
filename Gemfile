@@ -30,7 +30,7 @@ gem 'mandrill-api'
 gem 'sinatra', require: false
 gem 'fog'
 gem 'puma'
-gem 'launchy'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'

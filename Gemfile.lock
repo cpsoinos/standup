@@ -240,6 +240,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.4.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -465,11 +467,11 @@ DEPENDENCIES
   dotenv-rails
   faker
   fog
+  font-awesome-sass
   gon
   google-api-client
   jbuilder (~> 2.0)
   jquery-rails
-  launchy
   mandrill-api
   nokogiri
   omniauth
