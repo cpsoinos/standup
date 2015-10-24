@@ -27,6 +27,8 @@ body .well, body .jumbotron, .container .well, .container .jumbotron, .container
 
 .update-field {
   width: 100%;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .panel-primary {
@@ -42,9 +44,8 @@ body .well, body .jumbotron, .container .well, .container .jumbotron, .container
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.update-field {
-  border: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+.field {
+  margin-bottom: 1em;
 }
 
 #undefined > div {
