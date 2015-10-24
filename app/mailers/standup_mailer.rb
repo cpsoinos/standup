@@ -4,7 +4,7 @@ class StandupMailer < BaseMandrillMailer
   def send_standup_email(updates, user)
     options = {
       subject: "Standup for #{DateTime.now.strftime('%A, %B %e, %Y')}",
-      email: "coreypsoinos@gmail.com",
+      email: "team@promoboxx.com",
       name: "Promoboxx Team",
       template: "standup_2",
       updates: updates,
