@@ -82,6 +82,11 @@ class StandupMailer < BaseMandrillMailer
             #{update.content}
           </td>
         </tr>
+        <tr>
+          <td></td>
+          <td>
+            <img src='#{update.photo_url}'>
+          </td>
       </table>
       </br>
     eos
