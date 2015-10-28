@@ -16,7 +16,7 @@
             <%= f.file_field :photo, multiple: true %>
             or
             <%= f.label :remote_photo_url, multiple: true, value: "picture url:" %>
-            <%= f.text_field :remote_photo_url, multiple: true, placeholder: "http://..." %>
+            <%= f.url_field :remote_photo_url, multiple: true, placeholder: "http://...", pattern: "https?://.+" %>
           </div>
         </div>
       </div>

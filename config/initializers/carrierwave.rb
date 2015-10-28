@@ -6,5 +6,5 @@ CarrierWave.configure do |config|
     region:                'us-east-1'
   }
   config.fog_directory  = ENV["AWS_S3_BUCKET"]
-  config.fog_public     = false
+  config.fog_public     = true
 end
